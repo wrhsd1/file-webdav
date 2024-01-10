@@ -1,7 +1,6 @@
 {
-  "name": "my-app",
+  "name": "my-vercel-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
