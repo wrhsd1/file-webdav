@@ -5,7 +5,12 @@ const webdav = require('webdav');
 const app = express();
 const upload = multer({ dest: 'uploads/' });
 
-app.post('/upload', upload.single('file'), (req, res) => {
+app.all('/upload', upload.single('file'), (req, res) => {
+  if (req.method !== 'POST') {
+    res.status(405).send('Method Not Allowed');
+    return;
+  }
+
   const file = req.file;
   const client = webdav.createClient(process.env.WEBDAV_URL, {
     username: process.env.WEBDAV_USERNAME,
