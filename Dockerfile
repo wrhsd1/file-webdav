@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Modify the file in node_modules
-RUN sed -i '86i\    if (!requestOptions.maxContentLength) {\n        requestOptions.maxContentLength = Infinity;\n    }\n\n    if (!requestOptions.maxBodyLength) {\n        requestOptions.maxBodyLength = Infinity;\n    }' node_modules/webdav/dist/node/request.js
+RUN sed -i '87i\    if (!requestOptions.maxContentLength) {\n        requestOptions.maxContentLength = Infinity;\n    }\n\n    if (!requestOptions.maxBodyLength) {\n        requestOptions.maxBodyLength = Infinity;\n    }' node_modules/webdav/dist/node/request.js
 
 # Copy the rest of the application code to the working directory
 COPY . .
