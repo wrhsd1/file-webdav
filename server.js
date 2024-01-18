@@ -61,7 +61,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
         await davClient.putFileContents(remoteFilePath, data);
 
-        const newUrl = `https://wrhcn001.cachefly.net/webdav/proxy.php?path=${dateString}/${newfilename}`;
+        const newUrl = `${process.env.WEBDAV_USERNAME}/proxy.php?path=${dateString}/${newfilename}`;
         res.json({ message: 'File uploaded successfully', url: newUrl });
 
         fs.unlinkSync(localFilePath);
