@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="client.js"></script>
+</head>
+<body>
+    <div class="container">
+        <input type="file" id="fileInput" multiple>
+        <button onclick="uploadFile()">Upload</button>
+        <div id="progress"></div>
+        <div id="currentUploadResult"></div> <!-- 最新的上传结果 -->
+        <div id="historyUploadResults"></div> <!-- 历史上传结果 -->
+    </div>
+</body>
+</html>
